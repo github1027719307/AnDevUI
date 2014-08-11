@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#FFC5C5C5"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/player_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff383838"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/player_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:background="#ff454545"
+                android:padding="2dp" />
+
+            <TextView
+                android:id="@+id/player_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Designer name"
+                android:textColor="#ff46A3FF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/player_likes_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Likes and likes received"
+                android:textColor="#fff4f4f4"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/player_ff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="15dp"
+                android:text="Following and follower"
+                android:textColor="#ffaaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/player_collector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_selector"
+            android:padding="10dp"
+            android:src="@drawable/collect" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/player_about" >
+    </FrameLayout>
+
+    <com.etsy.android.grid.StaggeredGridView
+        android:id="@+id/player_more_shots"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/label"
+        app:column_count_landscape="3"
+        app:column_count_portrait="3"
+        app:item_margin="4dp" />
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player_more_shots" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Loading,wait please!"
+                android:layout_gravity="center"
+                android:textColor="#ff777777" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/label_sticky"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/player_about" >
+
+        <LinearLayout
+            android:id="@+id/colors"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ff383838"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff0080FF" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff46A3FF" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff84C1FF" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffACD6FF" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/shots_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="至最爱的你们"
+            android:textColor="#ff222222"
+            android:textSize="22sp" />
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,226 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 天气背景 -->
+
+    <FrameLayout
+        android:id="@+id/layout_drawer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/yjjc_h_a1" >
+    </FrameLayout>
+
+    <!-- 头像信息 -->
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="15.0dip"
+        android:layout_marginTop="30.0dip"
+        android:gravity="center_vertical"
+        android:minHeight="150.0dip"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/left_drawer_avatar_size"
+            android:layout_height="@dimen/left_drawer_avatar_size"
+            android:layout_marginLeft="32.0dip"
+            android:layout_marginRight="16.0dip"
+            android:background="@drawable/round_avatar_bg"
+            android:padding="1.0dip" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="16.0sp" />
+    </LinearLayout>
+
+    <!-- 第三方 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <!-- 第三方 -->
+
+        <LinearLayout
+            android:id="@+id/user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="16dp" >
+
+            <ImageButton
+                android:id="@+id/qq_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_btn_share_qq" />
+
+            <ImageButton
+                android:id="@+id/weibo_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_btn_share_weibo" />
+
+            <ImageButton
+                android:id="@+id/renren_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_btn_share_renren" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_user_commond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13.0dip"
+            android:text="@string/left_drawer_no_login_tip"
+            android:textColor="@color/left_drawer_no_login_tip_text"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+    <!-- <View style="@style/left_drawer_item_line" /> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/anddevui_btn"
+            style="@style/left_drawer_item_layout" >
+
+            <TextView
+                style="@style/left_drawer_item_text"
+                android:drawableLeft="@drawable/ic_drawer_search"
+                android:text="主页" />
+        </RelativeLayout>
+
+        <!-- <View style="@style/left_drawer_item_line" /> -->
+
+        <RelativeLayout
+            android:id="@+id/favorite_btn"
+            style="@style/left_drawer_item_layout" >
+
+            <TextView
+                style="@style/left_drawer_item_text"
+                android:drawableLeft="@drawable/ic_drawer_favorite"
+                android:text="@string/left_drawer_item_favorite" />
+        </RelativeLayout>
+
+        <!-- <View style="@style/left_drawer_item_line" /> -->
+
+        <RelativeLayout
+            android:id="@+id/logout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/offline_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <ImageView
+                    android:id="@+id/offline_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25.0dip"
+                    android:src="@drawable/ic_drawer_offline" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/offline_icon"
+                    android:minHeight="50.0dip" >
+
+                    <TextView
+                        android:id="@+id/offline_btn_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14.0dip"
+                        android:text="@string/left_drawer_item_offline"
+                        android:textColor="@color/left_drawer_item_text"
+                        android:textSize="15.0sp" />
+
+                    <TextView
+                        android:id="@+id/offline_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/offline_btn_text"
+                        android:layout_marginTop="2.0dip"
+                        android:textColor="@color/left_drawer_offline_hint"
+                        android:textSize="7.0sp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/offline_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/offline_btn"
+                android:src="@drawable/left_drawer_download"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <!-- <View style="@style/left_drawer_item_line" /> -->
+
+        <RelativeLayout
+            android:id="@+id/setting_btn"
+            style="@style/left_drawer_item_layout" >
+
+            <TextView
+                style="@style/left_drawer_item_text"
+                android:drawableLeft="@drawable/ic_drawer_setting"
+                android:text="@string/left_drawer_item_setting" />
+        </RelativeLayout>
+
+        <!-- <View style="@style/left_drawer_item_line" /> -->
+
+        <RelativeLayout
+            android:id="@+id/about_btn"
+            style="@style/left_drawer_item_layout" >
+
+            <TextView
+                style="@style/left_drawer_item_text"
+                android:drawableLeft="@drawable/ic_drawer_feedback"
+                android:text="@string/left_drawer_item_feedback" />
+        </RelativeLayout>
+
+        <!-- <View style="@style/left_drawer_item_line" /> -->
+
+        <RelativeLayout
+            android:id="@+id/appstore_btn"
+            style="@style/left_drawer_item_layout"
+            android:visibility="visible" >
+
+            <TextView
+                style="@style/left_drawer_item_text"
+                android:drawableLeft="@drawable/ic_drawer_appstore"
+                android:text="@string/left_drawer_item_appstore" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
